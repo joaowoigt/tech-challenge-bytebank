@@ -3,6 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 const textStyles = cva("font-sans", {
   variants: {
     intent: {
+      ExtraHeading: "text-[32px]",
       Heading: "text-big ",
       Regular: "text-medium",
       Small: "text-small",
@@ -18,6 +19,11 @@ const textStyles = cva("font-sans", {
     },
     style: {
       bold: "font-bold",
+    },
+    mt: {
+      big: "mt-big",
+      medium: "mt-medium",
+      small: "mt-small",
     },
     hover: {
       pointer: "hover:cursor-pointer",
@@ -37,12 +43,16 @@ export default function Text({
   intent,
   color,
   style,
+  mt,
   text,
   hover,
   ...props
 }: ButtonProps) {
   return (
-    <text className={textStyles({ intent, color, style, hover })} {...props}>
+    <text
+      className={textStyles({ intent, color, style, hover, mt })}
+      {...props}
+    >
       {text}
     </text>
   );
