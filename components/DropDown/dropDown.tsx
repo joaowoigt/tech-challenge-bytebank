@@ -75,7 +75,7 @@ export default function Dropdown(props: Props) {
         >
           {props.items.map((item) => (
             <a
-              className="hover:bg-[#E4EDE3]  hover:font-semibold hover:cursor-pointer text-black w-[355px] text-center py-small"
+              className="hover:bg-secondaryVariant  hover:font-semibold hover:cursor-pointer text-black w-[355px] text-center py-small"
               onClick={() => {
                 onItemSelected(item);
                 props.onSelect(item.type);

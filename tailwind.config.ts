@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./patterns/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -16,6 +17,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "#004D61",
         secondary: "#47A138",
+        secondaryVariant: "#E4EDE3",
         negative: "#FF5031",
         gradientStart: "#004D61",
         gradientEnd: "#FFFFFF",
