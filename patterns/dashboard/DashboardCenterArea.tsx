@@ -1,8 +1,29 @@
 import Text from "@/components/Texts/texts";
-import React, { useState } from "react";
+import { BalanceData } from "@/pages/api/balance";
+import React, { useEffect, useState } from "react";
 
 export default function DashboardCenterArea() {
   const [currentDate, setCurrentDate] = useState(getDate());
+  const [currentBalance, setCurrentBalance] = useState("");
+
+  useEffect(() => {
+    async function getBalance() {
+      try {
+        const res = await fetch("/api/balance");
+        if (!res.ok) {
+          throw new Error("Erro ao buscar o saldo");
+        }
+
+        const data: BalanceData = await res.json();
+        console.log(data.value);
+        setCurrentBalance(data.value);
+      } catch (error) {
+        console.log("Erro ao buscar o saldo");
+      }
+    }
+    getBalance();
+  });
+
   return (
     <section className="bg-primary h-[420px] rounded-2xl flex flex-row w-[50%] mx-big justify-between p-big">
       <div className="flex flex-col">
@@ -30,7 +51,7 @@ export default function DashboardCenterArea() {
         </div>
         <div className="bg-negative w-[180px] h-[1px] my-medium"></div>
         <Text intent="Small" color="white" text="Conta corrente"></Text>
-        <Text intent="ExtraHeading" color="white" text="R$ 2.500,00"></Text>
+        <Text intent="ExtraHeading" color="white" text={currentBalance}></Text>
       </div>
     </section>
   );
