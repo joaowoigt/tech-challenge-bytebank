@@ -1,25 +1,20 @@
 import { TransactionType } from "./TransactionType";
 
-export interface Credit {
+export interface Transaction {
   value: number;
   kind: TransactionType;
+  fullDate: string;
+  month: string;
 }
 
-export interface Debit {
-  value: number;
-  kind: TransactionType;
-}
-
-export type Transactions = Debit | Credit;
-
-export function isDebit(transaction: Transactions): transaction is Debit {
+export function isDebit(transaction: Transaction): boolean {
   return (
     transaction.kind == TransactionType.DOC ||
     transaction.kind == TransactionType.CambioDeMoeda
   );
 }
 
-export function isCredit(transaction: Transactions): transaction is Credit {
+export function isCredit(transaction: Transaction): boolean {
   return (
     transaction.kind == TransactionType.Salario ||
     transaction.kind == TransactionType.Emprestimo

@@ -1,16 +1,20 @@
-import {
-  Debit,
-  Credit,
-  Transactions,
-  isDebit,
-  isCredit,
-} from "@/models/Transactions";
+import { Transaction, isDebit, isCredit } from "@/models/Transactions";
 import { TransactionType } from "@/models/TransactionType";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const credit: Credit = { value: 10000.1, kind: TransactionType.Salario };
-const debit: Debit = { value: 2000.0, kind: TransactionType.DOC };
-const mockedInitialValues: Transactions[] = [credit, debit];
+const credit: Transaction = {
+  value: 10000.0,
+  kind: TransactionType.Salario,
+  fullDate: "10/11/2024",
+  month: "Novembro",
+};
+const debit: Transaction = {
+  value: 2000.0,
+  kind: TransactionType.DOC,
+  fullDate: "10/11/2024",
+  month: "Novembro",
+};
+const mockedInitialValues: Transaction[] = [credit, debit];
 
 export type BalanceData = {
   value: string;

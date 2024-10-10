@@ -1,5 +1,5 @@
 import Text from "@/components/Texts/texts";
-import DashboardCenterArea from "@/patterns/dashboard/DashboardCenterArea";
+import DashboardCenterArea from "@/patterns/dashboard/centerArea/DashboardCenterArea";
 import DashboardHeader from "@/patterns/dashboard/DashboardHeader";
 import DasboardSideMenu from "@/patterns/dashboard/DashboardSideMenu";
 
