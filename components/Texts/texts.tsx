@@ -16,6 +16,7 @@ const textStyles = cva("font-sans", {
       grey: "text-grey",
       white: "text-white",
       black: "text-black",
+      darkGray: "text-darkGray",
     },
     style: {
       bold: "font-bold",

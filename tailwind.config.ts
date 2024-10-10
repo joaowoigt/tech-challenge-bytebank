@@ -23,6 +23,7 @@ const config: Config = {
         gradientEnd: "#FFFFFF",
         grey: "#DEE9EA",
         white: "#F8F8F8",
+        darkGray: "#8B8B8B",
       },
       fontSize: {
         big: "25px",
