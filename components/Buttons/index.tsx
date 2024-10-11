@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 
 const buttonStyles = cva(
-  "hover:bg-black text-white font-bold py-[12px] px-[42px] rounded rounded-lg",
+  "hover:bg-black text-white font-bold py-[12px] px-[42px] rounded rounded-lg w-[100%]",
   {
     variants: {
       intent: {
@@ -16,7 +16,6 @@ const buttonStyles = cva(
       },
       defaultVarians: {
         intent: "primary",
-        spacing: "mSmall",
       },
     },
   }

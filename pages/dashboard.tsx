@@ -3,6 +3,7 @@ import DashboardCenterArea from "@/patterns/dashboard/centerArea/DashboardCenter
 import DashboardHeader from "@/patterns/dashboard/DashboardHeader";
 import DasboardSideMenu from "@/patterns/dashboard/DashboardSideMenu";
 import DashboardExtractArea from "@/patterns/dashboard/extractArea/DashboardExtract";
+import NewTransactionArea from "@/patterns/dashboard/NewTransactionArea/NewTransactionArea";
 
 export default function Dashboard() {
   return (
@@ -10,7 +11,10 @@ export default function Dashboard() {
       <DashboardHeader></DashboardHeader>
       <div className="flex flex-row  mt-big w-auto justify-center">
         <DasboardSideMenu></DasboardSideMenu>
-        <DashboardCenterArea></DashboardCenterArea>
+        <div className=" w-[100%] max-w-[680px] flex flex-col">
+          <DashboardCenterArea></DashboardCenterArea>
+          <NewTransactionArea></NewTransactionArea>
+        </div>
         <DashboardExtractArea></DashboardExtractArea>
       </div>
     </div>

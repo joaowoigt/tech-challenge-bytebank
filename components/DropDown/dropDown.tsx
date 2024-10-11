@@ -32,13 +32,13 @@ export default function Dropdown(props: Props) {
     <>
       <div className="relative">
         <div
-          className="outline outline-2 outline-secondary  bg-white rounded-md px-small w-[355px]  py-small text-black text-start flex flex-row justify-between hover:cursor-pointer"
+          className="outline outline-1 outline-primary  bg-white rounded-md px-small w-[355px]  py-small text-black text-start flex flex-row justify-between hover:cursor-pointer"
           onClick={toggle}
         >
           <Text text={selected} intent="Small" color="black"></Text>
           {isOpen ? (
             <svg
-              className="w-6 h-6 text-secondary"
+              className="w-6 h-6 text-primary"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -54,7 +54,7 @@ export default function Dropdown(props: Props) {
             </svg>
           ) : (
             <svg
-              className="w-6 h-6 text-secondary"
+              className="w-6 h-6 text-primary"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -71,7 +71,7 @@ export default function Dropdown(props: Props) {
           )}
         </div>
         <div
-          className={`absolute z-30 w-[355px] flex flex-col items-center bg-white rounded-md  outline outline-2 outline-secondary  ${transClass}`}
+          className={`absolute z-30 w-[355px] flex flex-col items-center bg-white rounded-md  outline outline-1 outline-primary  ${transClass}`}
         >
           {props.items.map((item) => (
             <a

@@ -24,6 +24,7 @@ const config: Config = {
         grey: "#DEE9EA",
         white: "#F8F8F8",
         darkGray: "#8B8B8B",
+        grayVariant: "#CBCBCB",
       },
       fontSize: {
         big: "25px",
@@ -32,6 +33,7 @@ const config: Config = {
         extra_small: "13px",
       },
       spacing: {
+        extraBig: "32px",
         small: "8px",
         medium: "16px",
         big: "24px",
