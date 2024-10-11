@@ -1,4 +1,23 @@
+import mongoose, { Schema } from "mongoose";
 import { TransactionType } from "./TransactionType";
+
+const transactionSchema = new Schema(
+  {
+    value: Number,
+    kind: Number,
+    fullDate: String,
+    month: String,
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const transaction =
+  mongoose.models.Transaction ||
+  mongoose.model("Transaction", transactionSchema);
+
+export default transaction;
 
 export interface Transaction {
   value: number;

@@ -2,14 +2,16 @@ import Button from "@/components/Buttons";
 import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
 import Text from "@/components/Texts/texts";
 import { TransactionType } from "@/models/TransactionType";
+import { CreateTransactionRequest } from "@/pages/api/add-transaction";
+import Router from "next/router";
 import React, { useEffect, useState } from "react";
 import CurrencyInput from "react-currency-input-field";
 
 export default function NewTransactionArea() {
   const [value, setValue] = useState<number>(0.0);
-  const [type, setType] = useState<TransactionType>();
+  const [type, setType] = useState<number>(0);
 
-  const onSelectedType = (type: TransactionType) => {
+  const onSelectedType = (type: number) => {
     setType(type);
     console.log(type);
   };
@@ -17,6 +19,33 @@ export default function NewTransactionArea() {
   const onChange = (text: number) => {
     setValue(text);
     console.log(value);
+  };
+
+  const onSubmit = async () => {
+    try {
+      const requestParam: CreateTransactionRequest = {
+        value: value,
+        type: type,
+      };
+      const res = await fetch("/api/add-transaction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestParam),
+      });
+
+      if (!res.ok) {
+        throw new Error("Erro ao criar transação");
+      }
+
+      if (res.status == 200) {
+        console.log("Transação criada com sucesso");
+        Router.reload();
+      }
+    } catch (error) {
+      console.log("Erro ao criar transação aqui");
+    }
   };
 
   const menuDropDownItems: DropDownItem[] = [
@@ -54,7 +83,7 @@ export default function NewTransactionArea() {
           intent="primary"
           text="Concluir transação"
           onClick={(event) => {
-            console.log("clicou no primeiro botao");
+            onSubmit();
           }}
         ></Button>
       </div>

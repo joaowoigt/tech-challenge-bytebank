@@ -21,7 +21,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/button/index.tsx",
-    "src/components/button/index.tsx"
+    "src/components/button/index.tsx",
+    "pages/lib/connectDB.js"
   ],
   "exclude": ["node_modules"]
 }

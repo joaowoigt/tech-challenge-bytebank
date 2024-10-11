@@ -1,19 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { isDebit, isCredit } from "@/models/Transactions";
-import { mockedInitialValues } from "./Data";
+import transaction, { isDebit, isCredit } from "@/models/Transactions";
+import connectMongoDB from "../lib/connectDB";
 
 export type ExtractData = {
+  id: string;
   month: string;
   type: string;
   fullDate: string;
   value: string;
 };
 
-export default function (
+export default async function (
   req: NextApiRequest,
   res: NextApiResponse<ExtractData[]>
 ) {
-  const mappedList: ExtractData[] = mockedInitialValues.map((item) => {
+  await connectMongoDB();
+  const extract = await transaction.find();
+  const mappedList: ExtractData[] = extract.map((item) => {
     const mappedType = isDebit(item) ? "Transferência" : "Depósito";
     const formatter = new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -22,11 +25,13 @@ export default function (
     const formattedValue = formatter.format(item.value);
     const finalValue = `${isDebit(item) ? "- " : ""}${formattedValue}`;
     const mappedItem: ExtractData = {
+      id: item._id,
       month: item.month,
       type: mappedType,
       fullDate: item.fullDate,
       value: finalValue,
     };
+    console.log(mappedItem.id);
     return mappedItem;
   });
   res.status(200).json(mappedList);
