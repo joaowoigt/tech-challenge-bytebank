@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Text from "@/components/Texts/texts";
-import { TransactionType } from "../../models/TransactionType";
+import { TransactionType } from "../../domain/models/TransactionType";
 
 export interface DropDownItem {
   title: string;

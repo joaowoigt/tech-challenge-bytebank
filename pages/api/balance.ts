@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import transaction, { isDebit, isCredit } from "@/models/Transactions";
+import transaction, { isDebit, isCredit } from "@/domain/models/Transactions";
 import { connect } from "http2";
 import connectMongoDB from "../lib/connectDB";
 export type BalanceData = {

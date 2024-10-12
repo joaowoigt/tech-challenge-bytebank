@@ -26,14 +26,14 @@ export interface Transaction {
   month: string;
 }
 
-export function isDebit(transaction: Transaction): boolean {
+export function isDebit(transaction: any): boolean {
   return (
     transaction.kind == TransactionType.DOC ||
     transaction.kind == TransactionType.CambioDeMoeda
   );
 }
 
-export function isCredit(transaction: Transaction): boolean {
+export function isCredit(transaction: any): boolean {
   return (
     transaction.kind == TransactionType.Salario ||
     transaction.kind == TransactionType.Emprestimo

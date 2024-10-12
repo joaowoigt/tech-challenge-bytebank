@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getTransactionType, TransactionType } from "@/models/TransactionType";
-import transaction from "@/models/Transactions";
+import {
+  getTransactionType,
+  TransactionType,
+} from "@/domain/models/TransactionType";
+import transaction from "@/domain/models/Transactions";
 import connectMongoDB from "../lib/connectDB";
 import { NextResponse } from "next/server";
 

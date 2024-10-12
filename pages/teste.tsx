@@ -1,7 +1,7 @@
 import Text from "@/components/Texts/texts";
 import Button from "../components/Buttons/index";
 import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
-import { TransactionType } from "../models/TransactionType";
+import { TransactionType } from "../domain/models/TransactionType";
 
 export default function DesignExample() {
   const menuDropDownItems: DropDownItem[] = [

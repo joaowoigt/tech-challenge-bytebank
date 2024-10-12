@@ -1,9 +1,9 @@
+import { TransactionResponse } from "@/data/responses/ExtractResponse";
 import ExtractItem from "./ExtractItem";
 import React, { useEffect, useState } from "react";
-import { ExtractData } from "@/pages/api/extract";
 
 export default function ExtractList() {
-  const [extractList, setExtractList] = useState<ExtractData[]>([]);
+  const [extractList, setExtractList] = useState<TransactionResponse[]>([]);
 
   useEffect(() => {
     async function getExtract() {
@@ -13,7 +13,7 @@ export default function ExtractList() {
           throw new Error("Erro ao buscar o extrato");
         }
 
-        const data: ExtractData[] = await res.json();
+        const data: TransactionResponse[] = await res.json();
         console.log(data);
         setExtractList(data);
       } catch (error) {
