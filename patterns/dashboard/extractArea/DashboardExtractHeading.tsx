@@ -1,5 +1,6 @@
 import Text from "@/components/Texts/texts";
 
+// todo: delete
 export default function DashboardExtractHeading() {
   return (
     <div className="flex flex-row justify-between">

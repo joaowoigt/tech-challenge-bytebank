@@ -1,13 +1,26 @@
 import Text from "@/components/Texts/texts";
+import { useRouter } from "next/router";
 
 export default function ExtractItem({
+  _id = "",
   month = "",
   type = "",
   fullDate = "",
   value = "",
 }) {
+  const router = useRouter();
+
+  const handleOnClick = () => {
+    router.push({
+      pathname: "/transactionDetails",
+      query: { id: _id },
+    });
+  };
   return (
-    <div className="flex flex-col mt-big">
+    <div
+      className="flex flex-col mt-big hover:cursor-pointer outline outline-1 outline-primary rounded-md p-big"
+      onClick={handleOnClick}
+    >
       <Text
         intent="ExtraSmall"
         color="secondary"
@@ -19,7 +32,6 @@ export default function ExtractItem({
         <Text intent="ExtraSmall" color="darkGray" text={fullDate}></Text>
       </div>
       <Text intent="Small" color="black" text={value} style="bold"></Text>
-      <div className="bg-secondary w-[180px] h-[1px] my-medium"></div>
     </div>
   );
 }

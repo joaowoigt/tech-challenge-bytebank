@@ -28,6 +28,7 @@ export default function ExtractList() {
     <div>
       {extractList.map((item) => (
         <ExtractItem
+          _id={item.id}
           month={item.month}
           type={item.type}
           fullDate={item.fullDate}
