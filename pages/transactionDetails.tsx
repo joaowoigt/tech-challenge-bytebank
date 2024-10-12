@@ -6,7 +6,6 @@ import { TransactionType } from "@/domain/models/TransactionType";
 import { CloseIcon, DeleteIcon, EditIcon } from "@/components/Icons/icons";
 import CurrencyInput from "react-currency-input-field";
 import { TransactionResponse } from "@/data/responses/ExtractResponse";
-import { GetTransactionRequest } from "./api/get-transaction";
 
 export default function TransactionDetails() {
   const [currentTransaction, setCurrentTransaction] =
@@ -35,16 +34,8 @@ export default function TransactionDetails() {
   useEffect(() => {
     async function getCurrentTransaction() {
       try {
-        console.log("entrou");
-        const requestParams: GetTransactionRequest = {
-          id: id,
-        };
-        const res = await fetch("/api/get-transaction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestParams),
+        const res = await fetch(`/api/${id}`, {
+          method: "GET",
         });
 
         if (!res.ok) {
@@ -52,7 +43,6 @@ export default function TransactionDetails() {
         }
 
         const data: TransactionResponse = await res.json();
-        console.log(data);
         setCurrentTransaction(data);
       } catch (error) {
         console.log("Erro ao buscar transação aqui");
@@ -62,6 +52,21 @@ export default function TransactionDetails() {
       getCurrentTransaction();
     }
   });
+
+  async function deleteTransaction() {
+    try {
+      const res = await fetch(`/api/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        throw new Error("Erro ao deletar transação");
+      }
+      router.push("/dashboard");
+    } catch (error) {
+      console.log("Erro ao deletar transaçã: ", error);
+    }
+  }
 
   return (
     <section className="bg-secondaryVariant h-[420px] rounded-2xl flex flex-col m-big justify-around p-big">
@@ -73,7 +78,7 @@ export default function TransactionDetails() {
           ) : (
             <EditIcon onClick={() => handleEditing(true)}></EditIcon>
           )}
-          <DeleteIcon onClick={() => {}}></DeleteIcon>
+          <DeleteIcon onClick={() => deleteTransaction()}></DeleteIcon>
         </div>
       </div>
       <div className="flex flex-col align-middle py-small">

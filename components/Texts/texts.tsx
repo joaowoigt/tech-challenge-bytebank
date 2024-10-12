@@ -37,7 +37,7 @@ const textStyles = cva("font-sans", {
 });
 
 interface ButtonProps extends VariantProps<typeof textStyles> {
-  text: string;
+  text: string | undefined;
 }
 
 export default function Text({
