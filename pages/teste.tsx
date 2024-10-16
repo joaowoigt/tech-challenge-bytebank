@@ -52,6 +52,14 @@ export default function DesignExample() {
         }}
       ></Button>
       <Button
+        intent="secondaryVariant"
+        text="Concluir transação"
+        spacing="mMedium"
+        onClick={(event) => {
+          console.log("clicou no primeiro botao");
+        }}
+      ></Button>
+      <Button
         intent="negative"
         text="Vamos ver"
         spacing="mBig"
