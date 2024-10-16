@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Router from "next/router";
 import Text from "@/components/Texts/texts";
 import { useEffect, useState } from "react";
 import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
@@ -6,11 +7,18 @@ import { TransactionType } from "@/domain/models/TransactionType";
 import { CloseIcon, DeleteIcon, EditIcon } from "@/components/Icons/icons";
 import CurrencyInput from "react-currency-input-field";
 import { TransactionResponse } from "@/data/responses/ExtractResponse";
+import Button from "@/components/Buttons";
+import { EditTransactionRequest } from "./api/[id]";
 
 export default function TransactionDetails() {
   const [currentTransaction, setCurrentTransaction] =
     useState<TransactionResponse>();
   const [isEditing, setIsEditing] = useState<boolean>(false);
+
+  const [newValue, setNewValue] = useState<number>();
+  const [newType, setNewType] = useState<number>();
+  const [newDate, setNewDate] = useState<string>();
+
   const menuDropDownItems: DropDownItem[] = [
     { title: "Cambio de Moeda", type: TransactionType.CambioDeMoeda },
     { title: "DOC/TED", type: TransactionType.DOC },
@@ -53,6 +61,34 @@ export default function TransactionDetails() {
     }
   });
 
+  const onEditClicked = async () => {
+    try {
+      const requestParam: EditTransactionRequest = {
+        value: newValue,
+        type: newType,
+        date: newDate,
+      };
+      const res = await fetch(`/api/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestParam),
+      });
+
+      if (!res.ok) {
+        throw new Error("Erro ao editar transação");
+      }
+
+      if (res.status == 200) {
+        console.log("Transação editada com sucesso");
+        Router.reload();
+      }
+    } catch (error) {
+      console.log("Erro ao editar transação");
+    }
+  };
+
   async function deleteTransaction() {
     try {
       const res = await fetch(`/api/${id}`, {
@@ -69,7 +105,7 @@ export default function TransactionDetails() {
   }
 
   return (
-    <section className="bg-secondaryVariant h-[420px] rounded-2xl flex flex-col m-big justify-around p-big">
+    <section className="bg-secondaryVariant h-fit rounded-2xl flex flex-col m-big justify-around p-big">
       <div className="flex flex-row justify-between">
         <Text intent="Heading" color="black" text={title}></Text>
         <div className="flex flex-row">
@@ -86,7 +122,9 @@ export default function TransactionDetails() {
         {isEditing ? (
           <Dropdown
             items={menuDropDownItems}
-            onSelect={(item: TransactionType) => {}}
+            onSelect={(item: TransactionType) => {
+              setNewType(item);
+            }}
           ></Dropdown>
         ) : (
           <Text
@@ -102,7 +140,9 @@ export default function TransactionDetails() {
         {isEditing ? (
           <CurrencyInput
             decimalsLimit={2}
-            onValueChange={(value, name, values) => {}}
+            onValueChange={(value, name, values) => {
+              setNewValue(values?.float as number);
+            }}
             prefix="R$"
             className="outline outline-1 outline-primary  mb-big mt-medium bg-white rounded-md px-small w-[250px]  py-small text-black text-start flex flex-row hover:cursor-text"
           />
@@ -118,7 +158,7 @@ export default function TransactionDetails() {
         <Text intent="Small" color="black" text="Data:"></Text>
         {isEditing ? (
           <input
-            onChange={(date) => console.log(date.target.value)}
+            onChange={(date) => setNewDate(date.target.value)}
             type="date"
             className="outline outline-1 outline-primary  mb-big mt-medium bg-white rounded-md px-small w-[250px]  py-small text-black text-start flex flex-row hover:cursor-text"
           />
@@ -129,6 +169,15 @@ export default function TransactionDetails() {
             text={currentTransaction?.fullDate}
           ></Text>
         )}
+        {isEditing ? (
+          <div className="w-[250px]">
+            <Button
+              intent="primary"
+              text="Editar!"
+              onClick={() => onEditClicked()}
+            ></Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

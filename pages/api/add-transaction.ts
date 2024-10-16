@@ -36,7 +36,7 @@ function getFullDate(): string {
   const month = today.getMonth() + 1;
   const year = today.getFullYear();
   const date = today.getDate();
-  return `${month}/${date}/${year}`;
+  return `${date}/${month}/${year}`;
 }
 
 function getMonthName(): string {

@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #004D61;
+    --background: #004d61;
     --foreground: #ededed;
   }
 }
@@ -28,10 +28,10 @@ body {
 
 @layer base {
   html {
-    font-family: 'Inter';
+    font-family: "Inter";
   }
-    @font-face {
-      font-family: 'Inter';
-      src: url('../pages/fonts/Inter-VariableFont_opsz\,wght.ttf') format('ttf');
-    }
+  @font-face {
+    font-family: "Inter";
+    src: url("../pages/fonts/Inter-VariableFont_opsz\,wght.ttf") format("ttf");
+  }
 }
