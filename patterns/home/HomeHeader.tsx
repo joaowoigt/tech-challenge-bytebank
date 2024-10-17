@@ -10,9 +10,9 @@ export default function HomeHeader() {
   };
   return (
     <header className="bg-black w-auto h-[96px] flex flex-row items-center pr-[10%] justify-around">
-      <div className="flex flex-row items-center justify-around w-[50%]">
+      <div className="flex flex-row items-center w-[50%]">
         <LogoIcon></LogoIcon>
-        <div className="flex flex-row w-[30%] justify-around">
+        <div className="flex flex-row w-[30%] justify-evenly ml-[72px]">
           <Text intent="Regular" color="secondary" text="Sobre"></Text>
           <Text intent="Regular" color="secondary" text="Serviços"></Text>
         </div>
