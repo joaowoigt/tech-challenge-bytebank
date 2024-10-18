@@ -61,7 +61,7 @@ export default function NewTransactionArea() {
     },
   ];
   return (
-    <div className="bg-grayVariant h-[420px] rounded-2xl flex flex-col  mx-big p-big mt-big">
+    <div className="bg-grayVariant h-[420px] rounded-2xl flex flex-col  mx-big p-big mt-big mobile:items-center">
       <Text intent="Heading" color="white" text="Nova transação"></Text>
       <div className="my-extraBig">
         <Dropdown
@@ -78,7 +78,7 @@ export default function NewTransactionArea() {
         prefix="R$"
         className="outline outline-1 outline-primary  mb-big mt-medium bg-white rounded-md px-small w-[250px]  py-small text-black text-start flex flex-row hover:cursor-text"
       />
-      <div className="w-[250px]">
+      <div className="w-[250px] mobile:w-full mobile:items-center mobile:flex mobile:flex-col">
         <Button
           intent="primary"
           text="Concluir transação"

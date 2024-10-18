@@ -18,7 +18,7 @@ export default function ExtractItem({
   };
   return (
     <div
-      className="flex flex-col mt-big hover:cursor-pointer outline outline-1 outline-primary rounded-md p-big"
+      className="flex flex-col mt-big hover:cursor-pointer outline outline-1 outline-primary rounded-md p-big mobile:w-[300px]"
       onClick={handleOnClick}
     >
       <Text

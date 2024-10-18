@@ -2,7 +2,7 @@ import Text from "@/components/Texts/texts";
 
 export default function DasboardSideMenu() {
   return (
-    <section className="h-screen bg-grey w-[180px] flex flex-col ml-[10%] items-center py-[37px] rounded-2xl">
+    <section className="h-screen bg-grey w-[180px] flex flex-col ml-[10%] items-center py-[37px] rounded-2xl mobile:hidden">
       <Text
         intent="Regular"
         color="secondary"

@@ -32,7 +32,7 @@ export default function Dropdown(props: Props) {
     <>
       <div className="relative">
         <div
-          className="outline outline-1 outline-primary  bg-white rounded-md px-small w-[355px]  py-small text-black text-start flex flex-row justify-between hover:cursor-pointer"
+          className="outline outline-1 outline-primary  bg-white rounded-md px-small w-[355px] mobile:w-[270px] py-small text-black text-start flex flex-row justify-between hover:cursor-pointer"
           onClick={toggle}
         >
           <Text text={selected} intent="Small" color="black"></Text>
@@ -71,11 +71,11 @@ export default function Dropdown(props: Props) {
           )}
         </div>
         <div
-          className={`absolute z-30 w-[355px] flex flex-col items-center bg-white rounded-md  outline outline-1 outline-primary  ${transClass}`}
+          className={`absolute z-30 w-[355px] flex flex-col items-center bg-white rounded-md  outline outline-1 outline-primary  ${transClass} mobile:w-[270px]`}
         >
           {props.items.map((item) => (
             <a
-              className="hover:bg-secondaryVariant  hover:font-semibold hover:cursor-pointer text-black w-[355px] text-center py-small"
+              className="hover:bg-secondaryVariant  hover:font-semibold hover:cursor-pointer text-black w-[355px] text-center py-small mobile:w-[270px]"
               onClick={() => {
                 onItemSelected(item);
                 props.onSelect(item.type);
