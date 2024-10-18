@@ -9,7 +9,7 @@ export default function NotFoundMain() {
   };
   return (
     <main className="flex flex-col items-center w-full mt-big">
-      <div className="flex flex-col w-[500px] items-center text-center">
+      <div className="flex flex-col w-[500px] items-center text-center mobile:w-full">
         <Text
           intent="Heading"
           color="black"
@@ -30,6 +30,7 @@ export default function NotFoundMain() {
             navigateToHome();
           }}
         ></Button>
+        <img className="my-big" src="../../notFound.png"></img>
       </div>
     </main>
   );

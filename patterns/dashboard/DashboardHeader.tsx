@@ -4,6 +4,7 @@ import {
   ProfileIcon,
 } from "@/components/Icons/icons";
 import Text from "@/components/Texts/texts";
+import HamburguerMenuDashboard from "./HamburguerMenuDashboard";
 
 export default function DashboardHeader() {
   return (
@@ -12,7 +13,7 @@ export default function DashboardHeader() {
         <Text intent="Heading" color="white" text="João Lucas Woigt"></Text>
       </div>
       <div className="hidden mobile:flex">
-        <HamburguerMenuVariant></HamburguerMenuVariant>
+        <HamburguerMenuDashboard></HamburguerMenuDashboard>
       </div>
       <ProfileIcon></ProfileIcon>
     </header>

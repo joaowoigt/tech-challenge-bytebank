@@ -298,22 +298,24 @@ export function HamburguerMenu() {
   );
 }
 
-export function HamburguerMenuVariant() {
+export function HamburguerMenuVariant({ onClick }: IconProps) {
   return (
-    <svg
-      className="text-negative"
-      width="24"
-      height="16"
-      viewBox="0 0 24 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        stroke="currentColor"
-        d="M0 0H24V2.6875H0V0ZM0 9.3125V6.6875H24V9.3125H0ZM0 16V13.3125H24V16H0Z"
-        fill="currentColor"
-      />
-    </svg>
+    <div onClick={(event) => onClick(event)} className={iconStyles({})}>
+      <svg
+        className="text-negative"
+        width="24"
+        height="16"
+        viewBox="0 0 24 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke="currentColor"
+          d="M0 0H24V2.6875H0V0ZM0 9.3125V6.6875H24V9.3125H0ZM0 16V13.3125H24V16H0Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
   );
 }
 

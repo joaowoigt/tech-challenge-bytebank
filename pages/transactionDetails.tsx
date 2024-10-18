@@ -105,9 +105,14 @@ export default function TransactionDetails() {
   }
 
   return (
-    <section className="bg-secondaryVariant h-fit rounded-2xl flex flex-col m-big justify-around p-big">
-      <div className="flex flex-row justify-between">
-        <Text intent="Heading" color="black" text={title}></Text>
+    <section className="bg-secondaryVariant h-fit rounded-2xl flex flex-col m-big justify-around p-big ">
+      <div className="flex flex-row justify-between mobile:flex-col">
+        <div className="mobile:hidden">
+          <Text intent="Heading" color="black" text={title}></Text>
+        </div>
+        <div className="hidden mb-big mobile:flex">
+          <Text intent="Regular" color="black" text={title}></Text>
+        </div>
         <div className="flex flex-row">
           {isEditing ? (
             <CloseIcon onClick={() => handleEditing(false)}></CloseIcon>
