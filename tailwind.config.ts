@@ -8,6 +8,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      mobile: { max: "360px" },
+    },
     extend: {
       fontFamily: {
         sans: ["Arial", "sans-serif"],

@@ -1,15 +1,15 @@
-import { LogoIcon } from "@/components/Icons/icons";
+import { HamburguerMenu, LogoIcon } from "@/components/Icons/icons";
 import Text from "@/components/Texts/texts";
 import Button from "@/components/Buttons/index";
 import { useRouter } from "next/router";
 
-export default function HomeHeader() {
+export function HomeHeader() {
   const router = useRouter();
   const navigateToDashboard = () => {
     router.push("/dashboard");
   };
   return (
-    <header className="bg-black w-auto h-[96px] flex flex-row items-center pr-[10%] justify-around">
+    <header className="bg-black w-auto h-[96px] flex flex-row items-center pr-[10%] justify-around mobile:hidden">
       <div className="flex flex-row items-center w-[50%]">
         <LogoIcon></LogoIcon>
         <div className="flex flex-row w-[30%] justify-evenly ml-[72px]">
@@ -36,6 +36,17 @@ export default function HomeHeader() {
             }}
           ></Button>
         </div>
+      </div>
+    </header>
+  );
+}
+
+export function MobileHeader() {
+  return (
+    <header className="hidden bg-black w-auto h-[96px] items-center justify-around mobile:flex flex-row">
+      <div className="flex flex-row justify-between w-full px-medium">
+        <HamburguerMenu></HamburguerMenu>
+        <LogoIcon></LogoIcon>
       </div>
     </header>
   );
