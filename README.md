@@ -48,4 +48,5 @@ Para o backend, foi feito um BFF para tratar os dados do banco e entregar exatam
 
 ## Sobre o desenvolvedor
 
-Olá, meu nome é João Woigt, sou desenvolvedor deste 2020 quando decidi fazer a transição da minha area de estudo (Ciências Socias) para a programação a fim de encontrar melhores oportunidades. Participei de diversos bootcamps, em destaque
+Olá, meu nome é João Woigt, sou desenvolvedor deste 2020 quando decidi fazer a transição da minha area de estudo (Ciências Socias) para a programação a fim de encontrar melhores oportunidades. Participei de diversos bootcamps, em destaque O Santander Bootcampo | Mobile developer e o curso da Ada Tech Web full-stack. Hoje me especializo em desenvolvimento mobile, com foco em Android e Kotlin multiplataforma. Atuo faz 4 anos na area, tendo passado por projetos como Rock in Rio, Banco Pan e Stone, onde me encontro empregado atualmente.
+Fique a vontade para se conectar em meu [Linkedin](https://www.linkedin.com/in/joaowoigt/)
