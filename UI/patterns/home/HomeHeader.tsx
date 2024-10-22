@@ -1,6 +1,6 @@
-import { HamburguerMenu, LogoIcon } from "@/components/Icons/icons";
-import Text from "@/components/Texts/texts";
-import Button from "@/components/Buttons/index";
+import { HamburguerMenu, LogoIcon } from "@/UI/components/Icons/icons";
+import Text from "@/UI/components/Texts/texts";
+import Button from "@/UI/components/Buttons/index";
 import { useRouter } from "next/router";
 
 export function HomeHeader() {

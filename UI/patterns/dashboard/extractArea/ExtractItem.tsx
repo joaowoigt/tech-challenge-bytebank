@@ -1,4 +1,4 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import { useRouter } from "next/router";
 
 export default function ExtractItem({

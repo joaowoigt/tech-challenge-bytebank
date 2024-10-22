@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Olá, seja bem vindo ao resultado do meu Tech Challenge :v:. Meu nome é João Woigt, meu é rm356898, você pode ler
+mais sobre mim no final deste ReadMe na sessão **Sobre o desenvolvedor**
 
-## Getting Started
+## Iniciando o projeto
 
-First, run the development server:
+Apos clonar o projeto, no terminal dentro da pasta rode o comando para instalar as dependencias:
+
+```bash
+npm install
+```
+
+Em seguida, crie um arquivo na raiz do projeto chamado **.env**. Neste arquivo, crie uma variavel chamada **MONGODB_URI**. Esta variavel deverá conter sua string de conexão para um cluste no MongoDB. Para isso você vai precisar: <br>
+1- criar uma conta no [MongoDB](https://www.mongodb.com/pt-br) <br>
+2- Iniciar um cluster <br>
+3- Na tela inicial, clique em **connect**<br>
+4- No modal que será aberto, clique em **Drivers**<br>
+5- Copie sua connection string, ela terá o formato: mongodb+srv://[SEU_USER]:<[SUA_SENHA_DO_DATABASE]><br>
+
+Caso tenha dificuldades você pode seguir o [tutorial](https://www.mongodb.com/pt-br/developer/languages/javascript/nextjs-with-mongodb/)
+
+Por ultimo, rode o servidor local para iniciar o projeto:
 
 ```bash
 npm run dev
@@ -14,27 +30,22 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sobre o projeto <br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Para a crição deste projeto foram utilizadas as tecnologias
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Next.js
+- TypeScript
+- Tailwind
+- CVA
+- MongoDb e Mongoose
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Utilizamos os padrão do design system fornecido para criar os componentes. Dentro da pasta **UI** se encontra o resultado deles, nela você encontrará duas outras pastas. **Components**, referentes as minimas unidades de layout, tudo aquilo que foi considerado mais básico e atomico (textos, botões, icones, dropdown). **Patterns**, são conjuntos de componentes que são como regiões nas telas, utilizado para segregar responsabilidades e facilitar a manutenção.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Fora isso, foi utilizado clean architeture para separar as camadas do projeto. Assim temos a pasta de **data** com os models necessarios para a comunicação com o backend, a pasta **domain** responsavel por regras de negocios e transmitir informações entre data e view. E as camadas de **presentation** constituidas pela pasta do proprio Next.Js Pages, contendo o codigo para as paginas do projeto, e a pasta **UI** contendo o designSystem.
 
-## Learn More
+Para o backend, foi feito um BFF para tratar os dados do banco e entregar exatamente o que o front necessita, este foi construido com os API routes nativos do Next.js e se encontra na pasta **api**
 
-To learn more about Next.js, take a look at the following resources:
+## Sobre o desenvolvedor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Olá, meu nome é João Woigt, sou desenvolvedor deste 2020 quando decidi fazer a transição da minha area de estudo (Ciências Socias) para a programação a fim de encontrar melhores oportunidades. Participei de diversos bootcamps, em destaque

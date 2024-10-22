@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import Router from "next/router";
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import { useEffect, useState } from "react";
-import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
+import Dropdown, { DropDownItem } from "@/UI/components/DropDown/dropDown";
 import { TransactionType } from "@/domain/models/TransactionType";
-import { CloseIcon, DeleteIcon, EditIcon } from "@/components/Icons/icons";
+import { CloseIcon, DeleteIcon, EditIcon } from "@/UI/components/Icons/icons";
 import CurrencyInput from "react-currency-input-field";
 import { TransactionResponse } from "@/data/responses/ExtractResponse";
-import Button from "@/components/Buttons";
+import Button from "@/UI/components/Buttons";
 import { EditTransactionRequest } from "./api/[id]";
 
 export default function TransactionDetails() {

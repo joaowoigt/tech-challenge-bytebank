@@ -2,8 +2,8 @@ import {
   HamburguerMenu,
   HamburguerMenuVariant,
   ProfileIcon,
-} from "@/components/Icons/icons";
-import Text from "@/components/Texts/texts";
+} from "@/UI/components/Icons/icons";
+import Text from "@/UI/components/Texts/texts";
 import HamburguerMenuDashboard from "./HamburguerMenuDashboard";
 
 export default function DashboardHeader() {

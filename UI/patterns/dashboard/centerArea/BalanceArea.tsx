@@ -1,4 +1,4 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import { BalanceData } from "@/pages/api/balance";
 import React, { useEffect, useState } from "react";
 

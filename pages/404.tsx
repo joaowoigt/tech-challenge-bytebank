@@ -1,6 +1,6 @@
-import NotFoundMain from "@/patterns/404/NotFoundMain";
-import HomeFooter from "@/patterns/home/HomeFooter";
-import { HomeHeader, MobileHeader } from "@/patterns/home/HomeHeader";
+import NotFoundMain from "@/UI/patterns/404/NotFoundMain";
+import HomeFooter from "@/UI/patterns/home/HomeFooter";
+import { HomeHeader, MobileHeader } from "@/UI/patterns/home/HomeHeader";
 
 export default function NotFound() {
   return (

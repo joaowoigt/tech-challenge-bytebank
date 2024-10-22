@@ -1,5 +1,5 @@
-import Button from "@/components/Buttons";
-import Text from "@/components/Texts/texts";
+import Button from "@/UI/components/Buttons";
+import Text from "@/UI/components/Texts/texts";
 import { useRouter } from "next/router";
 
 export default function NotFoundMain() {

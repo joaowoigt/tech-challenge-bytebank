@@ -1,4 +1,4 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 
 export default function AdvantageItem({ title, text, icon }) {
   const getImage = () => {

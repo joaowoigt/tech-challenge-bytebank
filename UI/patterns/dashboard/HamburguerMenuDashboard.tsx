@@ -1,6 +1,6 @@
-import { CloseIcon, HamburguerMenuVariant } from "@/components/Icons/icons";
+import { CloseIcon, HamburguerMenuVariant } from "@/UI/components/Icons/icons";
 import { useState } from "react";
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 
 export default function HamburguerMenuDashboard() {
   const [isOpen, setIsOpen] = useState<boolean>(false);

@@ -1,4 +1,4 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import React, { useEffect, useState } from "react";
 
 export default function WelcomeArea() {

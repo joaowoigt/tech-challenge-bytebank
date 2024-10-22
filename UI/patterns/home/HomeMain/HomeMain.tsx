@@ -1,6 +1,6 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import AdvantageItem from "./AdvangetageItem";
-import Button from "@/components/Buttons";
+import Button from "@/UI/components/Buttons";
 import { useRouter } from "next/router";
 
 export default function HomeMain() {

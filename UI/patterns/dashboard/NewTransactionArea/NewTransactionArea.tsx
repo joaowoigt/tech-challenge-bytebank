@@ -1,6 +1,6 @@
-import Button from "@/components/Buttons";
-import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
-import Text from "@/components/Texts/texts";
+import Button from "@/UI/components/Buttons";
+import Dropdown, { DropDownItem } from "@/UI/components/DropDown/dropDown";
+import Text from "@/UI/components/Texts/texts";
 import { TransactionType } from "@/domain/models/TransactionType";
 import { CreateTransactionRequest } from "@/pages/api/add-transaction";
 import Router from "next/router";

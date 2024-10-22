@@ -1,4 +1,4 @@
-import Text from "@/components/Texts/texts";
+import Text from "@/UI/components/Texts/texts";
 import ExtractList from "./ExtractList";
 
 export default function DashboardExtractArea() {

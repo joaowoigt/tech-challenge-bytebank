@@ -3,8 +3,8 @@ import {
   LogoIconWhite,
   WhatsappIcon,
   YoutubeIcon,
-} from "@/components/Icons/icons";
-import Text from "@/components/Texts/texts";
+} from "@/UI/components/Icons/icons";
+import Text from "@/UI/components/Texts/texts";
 
 export default function HomeFooter() {
   return (

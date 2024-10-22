@@ -1,6 +1,6 @@
-import Text from "@/components/Texts/texts";
-import Button from "../components/Buttons/index";
-import Dropdown, { DropDownItem } from "@/components/DropDown/dropDown";
+import Text from "@/UI/components/Texts/texts";
+import Button from "../UI/components/Buttons/index";
+import Dropdown, { DropDownItem } from "@/UI/components/DropDown/dropDown";
 import { TransactionType } from "../domain/models/TransactionType";
 
 export default function DesignExample() {

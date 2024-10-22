@@ -1,9 +1,8 @@
-import Text from "@/components/Texts/texts";
-import DashboardCenterArea from "@/patterns/dashboard/centerArea/DashboardCenterArea";
-import DashboardHeader from "@/patterns/dashboard/DashboardHeader";
-import DasboardSideMenu from "@/patterns/dashboard/DashboardSideMenu";
-import DashboardExtractArea from "@/patterns/dashboard/extractArea/DashboardExtract";
-import NewTransactionArea from "@/patterns/dashboard/NewTransactionArea/NewTransactionArea";
+import DashboardCenterArea from "@/UI/patterns/dashboard/centerArea/DashboardCenterArea";
+import DashboardHeader from "@/UI/patterns/dashboard/DashboardHeader";
+import DasboardSideMenu from "@/UI/patterns/dashboard/DashboardSideMenu";
+import DashboardExtractArea from "@/UI/patterns/dashboard/extractArea/DashboardExtract";
+import NewTransactionArea from "@/UI/patterns/dashboard/NewTransactionArea/NewTransactionArea";
 
 export default function Dashboard() {
   return (
