@@ -15,6 +15,7 @@ Em seguida, crie um arquivo na raiz do projeto chamado **.env**. Neste arquivo, 
 3- Na tela inicial, clique em **connect**<br>
 4- No modal que será aberto, clique em **Drivers**<br>
 5- Copie sua connection string, ela terá o formato: mongodb+srv://[SEU_USER]:<[SUA_SENHA_DO_DATABASE]><br>
+6- Adicione a connection string no arquivo .env substituindo o <Sua connection string aqui>
 
 Caso tenha dificuldades você pode seguir o [tutorial](https://www.mongodb.com/pt-br/developer/languages/javascript/nextjs-with-mongodb/)
 

@@ -1,6 +1,12 @@
 import Text from "@/UI/components/Texts/texts";
 
-export default function AdvantageItem({ title, text, icon }) {
+interface AdvantageProps {
+  title: string;
+  text: string;
+  icon: string;
+}
+
+export default function AdvantageItem({ title, text, icon }: AdvantageProps) {
   const getImage = () => {
     switch (icon) {
       case "gift": {
