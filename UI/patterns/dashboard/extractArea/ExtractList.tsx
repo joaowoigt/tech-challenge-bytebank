@@ -20,10 +20,8 @@ export default function ExtractList() {
         console.log("Erro ao buscar o extrato");
       }
     }
-    if (extractList.length == 0) {
-      getExtract();
-    }
-  });
+    getExtract();
+  }, []);
   return (
     <div>
       {extractList.map((item) => (
